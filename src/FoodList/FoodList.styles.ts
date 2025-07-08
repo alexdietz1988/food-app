@@ -17,10 +17,12 @@ export const Food = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: white;
+  color: black;
 
   &:hover {
     cursor: pointer;
-    background-color: hsl(from var(--color-bg) h s calc(l * 0.9));
+    background-color: hsl(0 0 90%);
   }
 
   h1 {
@@ -29,5 +31,9 @@ export const Food = styled.div`
 
   h2 {
     font-style: italic;
+  }
+
+  img {
+    width: 5rem;
   }
 `;

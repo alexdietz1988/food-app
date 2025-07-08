@@ -10,6 +10,7 @@ const FoodList = ({ foods, onClick }: FoodListProps) => (
   <Styled.FoodList>
     {foods.map((food) => (
       <Styled.Food onClick={() => onClick(food)} key={food.name}>
+        {food.image && <img src={food.image} alt={food.name} />}
         <h1>{food.name}</h1>
         <h2>{food.nutrient ? ` ${food.nutrient}` : ''}</h2>
         <h2>{food.seasons ? `${food.seasons}` : ''}</h2>

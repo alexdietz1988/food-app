@@ -1,10 +1,9 @@
 :root {
-  --color-bg: hsl(0, 0%, 20%);
   font-family: sans-serif;
+  --color-bg: hsl(0, 0%, 15%);
 }
 
 * {
-  /* font-weight: 300; */
   margin: 0;
 }
 

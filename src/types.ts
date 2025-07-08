@@ -15,6 +15,7 @@ export interface Food {
   nutrient?: string;
   category?: string;
   seasons?: Season[];
+  image?: string;
 }
 
 export const days = [
