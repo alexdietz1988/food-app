@@ -19,6 +19,7 @@ const foods: Food[] = [
   { name: 'roasted veggies', category: 'veggies' },
   { name: 'roasted butternut squash salad', category: 'veggies' },
   { name: 'chocolate-chip cookies', category: 'sweets' },
+  { name: 'chipotle', category: 'restaurants' },
 ];
 
 const days = [
@@ -74,24 +75,31 @@ const App = () => {
   };
 
   return (
-    <>
-      <RenderFoodList foods={foods} onClick={addFoodToDay} />
-      <hr />
-      {days.map((day) => (
-        <>
-          <Styled.Day
-            onClick={() => setSelectedDay(day)}
-            selected={selectedDay === day}
-          >
-            {day}
-          </Styled.Day>
-          <RenderFoodList
-            foods={mealPlan[day as keyof typeof mealPlan]}
-            onClick={removeFoodFromDay}
-          />
-        </>
-      ))}
-    </>
+    <Styled.Container>
+      <div>
+        <Styled.H1>Food Ideas</Styled.H1>
+        <RenderFoodList foods={foods} onClick={addFoodToDay} />
+      </div>
+      <div>
+        <Styled.H1>Meal Plan</Styled.H1>
+        <Styled.MealPlan>
+          {days.map((day) => (
+            <>
+              <Styled.Day
+                onClick={() => setSelectedDay(day)}
+                selected={selectedDay === day}
+              >
+                <p>{day}</p>
+                <RenderFoodList
+                  foods={mealPlan[day as keyof typeof mealPlan]}
+                  onClick={removeFoodFromDay}
+                />
+              </Styled.Day>
+            </>
+          ))}
+        </Styled.MealPlan>
+      </div>
+    </Styled.Container>
   );
 };
 
