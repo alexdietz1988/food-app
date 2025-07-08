@@ -33,9 +33,7 @@ const FoodIdeas = ({
         <h2>Nutrients:</h2>
         {nutrients.map((nutrient) => (
           <Styled.FilterLabel
-            onClick={() =>
-              setFilter((prev) => ({ ...prev, nutrient: nutrient }))
-            }
+            onClick={() => setFilter((prev) => ({ ...prev, nutrient }))}
             selected={filter.nutrient === nutrient}
           >
             {nutrient}
@@ -43,13 +41,7 @@ const FoodIdeas = ({
         ))}
       </Styled.Filter>
     </Styled.FiltersContainer>
-    <FoodList
-      foods={foods.filter(
-        (food) =>
-          filter.season === 'all' || food.seasons?.includes(filter.season)
-      )}
-      onClick={addFoodToDay}
-    />
+    <FoodList foods={foods} onClick={addFoodToDay} />
   </div>
 );
 

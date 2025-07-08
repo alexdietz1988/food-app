@@ -3,6 +3,7 @@ export type Nutrient =
   | 'protein'
   | 'carbs'
   | 'veggies'
+  | 'fruits'
   | 'greens'
   | 'sweets'
   | 'all';
@@ -13,6 +14,7 @@ export const nutrients: Nutrient[] = [
   'protein',
   'carbs',
   'veggies',
+  'fruits',
   'greens',
   'sweets',
 ];

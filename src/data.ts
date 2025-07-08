@@ -64,13 +64,13 @@ const veggies: Food[] = [
 const fruits: Food[] = [
   {
     name: 'apples',
-    nutrient: 'veggies',
+    nutrient: 'fruits',
     image: '',
     seasons: ['summer', 'fall'],
   },
-  { name: 'bananas', nutrient: 'veggies', image: bananas },
-  { name: 'avocados', nutrient: 'veggies', image: avocadoes },
-  { name: 'tomatoes', nutrient: 'veggies', image: tomatoes, seasons: ['fall'] },
+  { name: 'bananas', nutrient: 'fruits', image: bananas },
+  { name: 'avocados', nutrient: 'fruits', image: avocadoes },
+  { name: 'tomatoes', nutrient: 'fruits', image: tomatoes, seasons: ['fall'] },
 ];
 
 const proteins: Food[] = [
@@ -89,7 +89,7 @@ const carbs: Food[] = [
 ];
 
 const sweets: Food[] = [
-  { name: 'chocolate-chip cookies', category: 'sweets', image: cookies },
+  { name: 'chocolate-chip cookies', nutrient: 'sweets', image: cookies },
 ];
 
 const restaurants: Food[] = [
