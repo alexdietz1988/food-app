@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import * as Styled from './App.styles';
+import { type Season, type Food } from './types';
+import { days } from './types';
 
-type Season = 'spring' | 'summer' | 'fall' | 'winter' | 'all';
-
-interface Food {
-  name: string;
-  category?: string;
-  seasons?: Season[];
-}
+import FoodIdeas from './FoodIdeas/FoodIdeas';
+import MealPlan from './MealPlan/MealPlan';
 
 const foods: Food[] = [
   { name: 'burger', category: 'protein' },
@@ -25,32 +22,6 @@ const foods: Food[] = [
   { name: 'chipotle', category: 'restaurants' },
   { name: 'summer squash', category: 'veggies', seasons: ['summer'] },
 ];
-
-const days = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
-];
-
-interface RenderFoodListProps {
-  foods: Food[];
-  onClick: (food: Food) => void;
-}
-
-const RenderFoodList = ({ foods, onClick }: RenderFoodListProps) => (
-  <Styled.FoodList>
-    {foods.map((food) => (
-      <Styled.Food onClick={() => onClick(food)} key={food.name}>
-        <h1>{food.name}</h1>
-        <h2>{food.category ? ` ${food.category}` : ''}</h2>
-      </Styled.Food>
-    ))}
-  </Styled.FoodList>
-);
 
 const App = () => {
   const [selectedDay, setSelectedDay] = useState(days[0]);
@@ -84,48 +55,18 @@ const App = () => {
 
   return (
     <Styled.Container>
-      <div>
-        <Styled.H1>Food Ideas</Styled.H1>
-        <div>
-          <h2>Seasons:</h2>
-          <Styled.SeasonsContainer>
-            {['all', 'spring', 'summer', 'fall', 'winter'].map((season) => (
-              <Styled.SeasonLabel
-                onClick={() => setSelectedSeason(season as Season)}
-                selected={selectedSeason === season}
-              >
-                {season}
-              </Styled.SeasonLabel>
-            ))}
-          </Styled.SeasonsContainer>
-        </div>
-        <RenderFoodList
-          foods={foods.filter(
-            (food) =>
-              selectedSeason === 'all' || food.seasons?.includes(selectedSeason)
-          )}
-          onClick={addFoodToDay}
-        />
-      </div>
-      <div>
-        <Styled.H1>Meal Plan</Styled.H1>
-        <Styled.MealPlan>
-          {days.map((day) => (
-            <>
-              <Styled.Day
-                onClick={() => setSelectedDay(day)}
-                selected={selectedDay === day}
-              >
-                <p>{day}</p>
-                <RenderFoodList
-                  foods={mealPlan[day as keyof typeof mealPlan]}
-                  onClick={removeFoodFromDay}
-                />
-              </Styled.Day>
-            </>
-          ))}
-        </Styled.MealPlan>
-      </div>
+      <FoodIdeas
+        selectedSeason={selectedSeason}
+        setSelectedSeason={setSelectedSeason}
+        foods={foods}
+        addFoodToDay={addFoodToDay}
+      />
+      <MealPlan
+        setSelectedDay={setSelectedDay}
+        selectedDay={selectedDay}
+        mealPlan={mealPlan}
+        removeFoodFromDay={removeFoodFromDay}
+      />
     </Styled.Container>
   );
 };
