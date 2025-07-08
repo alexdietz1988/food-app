@@ -1,17 +1,17 @@
 import * as Styled from './FoodIdeas.styles';
 import FoodList from '../FoodList/FoodList';
-import { type Season, type Food } from '../types';
+import { type Food, type Filter, seasons, nutrients } from '../types';
 
 interface FoodIdeasProps {
-  selectedSeason: Season;
-  setSelectedSeason: (season: Season) => void;
+  filter: Filter;
+  setFilter: React.Dispatch<React.SetStateAction<Filter>>;
   foods: Food[];
   addFoodToDay: (food: Food) => void;
 }
 
 const FoodIdeas = ({
-  selectedSeason,
-  setSelectedSeason,
+  filter,
+  setFilter,
   foods,
   addFoodToDay,
 }: FoodIdeasProps) => (
@@ -20,10 +20,10 @@ const FoodIdeas = ({
     <Styled.FiltersContainer>
       <Styled.Filter>
         <h2>Seasons:</h2>
-        {['all', 'spring', 'summer', 'fall', 'winter'].map((season) => (
+        {seasons.map((season) => (
           <Styled.FilterLabel
-            onClick={() => setSelectedSeason(season as Season)}
-            selected={selectedSeason === season}
+            onClick={() => setFilter((prev) => ({ ...prev, season }))}
+            selected={filter.season === season}
           >
             {season}
           </Styled.FilterLabel>
@@ -31,19 +31,22 @@ const FoodIdeas = ({
       </Styled.Filter>
       <Styled.Filter>
         <h2>Nutrients:</h2>
-        {['protein', 'carbs', 'veggies', 'sweets', 'restaurants'].map(
-          (category) => (
-            <Styled.FilterLabel key={category} selected={false}>
-              {category}
-            </Styled.FilterLabel>
-          )
-        )}
+        {nutrients.map((nutrient) => (
+          <Styled.FilterLabel
+            onClick={() =>
+              setFilter((prev) => ({ ...prev, nutrient: nutrient }))
+            }
+            selected={filter.nutrient === nutrient}
+          >
+            {nutrient}
+          </Styled.FilterLabel>
+        ))}
       </Styled.Filter>
     </Styled.FiltersContainer>
     <FoodList
       foods={foods.filter(
         (food) =>
-          selectedSeason === 'all' || food.seasons?.includes(selectedSeason)
+          filter.season === 'all' || food.seasons?.includes(filter.season)
       )}
       onClick={addFoodToDay}
     />

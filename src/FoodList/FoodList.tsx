@@ -11,6 +11,8 @@ const FoodList = ({ foods, onClick }: FoodListProps) => (
     {foods.map((food) => (
       <Styled.Food onClick={() => onClick(food)} key={food.name}>
         <h1>{food.name}</h1>
+        <h2>{food.nutrient ? ` ${food.nutrient}` : ''}</h2>
+        <h2>{food.seasons ? `${food.seasons}` : ''}</h2>
         <h2>{food.category ? ` ${food.category}` : ''}</h2>
       </Styled.Food>
     ))}
