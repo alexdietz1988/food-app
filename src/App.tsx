@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import * as Styled from './App.styles';
 
+type Season = 'spring' | 'summer' | 'fall' | 'winter' | 'all';
+
 interface Food {
   name: string;
   category?: string;
+  seasons?: Season[];
 }
 
 const foods: Food[] = [
@@ -20,6 +23,7 @@ const foods: Food[] = [
   { name: 'roasted butternut squash salad', category: 'veggies' },
   { name: 'chocolate-chip cookies', category: 'sweets' },
   { name: 'chipotle', category: 'restaurants' },
+  { name: 'summer squash', category: 'veggies', seasons: ['summer'] },
 ];
 
 const days = [
@@ -60,9 +64,11 @@ const App = () => {
     Sunday: [] as Food[],
   });
   const addFoodToDay = (food: Food) => {
+    const existing = mealPlan[selectedDay as keyof typeof mealPlan];
+    if (existing.find((f) => f.name === food.name)) return;
     setMealPlan((prev) => ({
       ...prev,
-      [selectedDay]: [...prev[selectedDay as keyof typeof mealPlan], food],
+      [selectedDay]: [...existing, food],
     }));
   };
   const removeFoodFromDay = (food: Food) => {
@@ -74,11 +80,32 @@ const App = () => {
     }));
   };
 
+  const [selectedSeason, setSelectedSeason] = useState<Season>('all');
+
   return (
     <Styled.Container>
       <div>
         <Styled.H1>Food Ideas</Styled.H1>
-        <RenderFoodList foods={foods} onClick={addFoodToDay} />
+        <div>
+          <h2>Seasons:</h2>
+          <Styled.SeasonsContainer>
+            {['all', 'spring', 'summer', 'fall', 'winter'].map((season) => (
+              <Styled.SeasonLabel
+                onClick={() => setSelectedSeason(season as Season)}
+                selected={selectedSeason === season}
+              >
+                {season}
+              </Styled.SeasonLabel>
+            ))}
+          </Styled.SeasonsContainer>
+        </div>
+        <RenderFoodList
+          foods={foods.filter(
+            (food) =>
+              selectedSeason === 'all' || food.seasons?.includes(selectedSeason)
+          )}
+          onClick={addFoodToDay}
+        />
       </div>
       <div>
         <Styled.H1>Meal Plan</Styled.H1>

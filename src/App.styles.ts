@@ -43,6 +43,16 @@ export const Food = styled.div`
   }
 `;
 
+export const SeasonsContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+export const SeasonLabel = styled.div<{ selected: boolean }>`
+  cursor: pointer;
+  font-weight: ${(props) => (props.selected ? '600' : '300')};
+`;
+
 export const MealPlan = styled.div`
   display: flex;
   flex-direction: column;
