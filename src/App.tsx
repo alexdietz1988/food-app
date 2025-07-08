@@ -21,6 +21,16 @@ const foods: Food[] = [
   { name: 'chocolate-chip cookies', category: 'sweets' },
 ];
 
+const days = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+];
+
 interface RenderFoodListProps {
   foods: Food[];
   onClick: (food: Food) => void;
@@ -38,16 +48,49 @@ const RenderFoodList = ({ foods, onClick }: RenderFoodListProps) => (
 );
 
 const App = () => {
-  const [selectedFood, setSelectedFood] = useState<Food[]>([]);
-  const addFood = (food: Food) => setSelectedFood((prev) => [...prev, food]);
-  const removeFood = (food: Food) =>
-    setSelectedFood((prev) => [...prev].filter((f) => f.name !== food.name));
+  const [selectedDay, setSelectedDay] = useState(days[0]);
+  const [mealPlan, setMealPlan] = useState({
+    Monday: [] as Food[],
+    Tuesday: [] as Food[],
+    Wednesday: [] as Food[],
+    Thursday: [] as Food[],
+    Friday: [] as Food[],
+    Saturday: [] as Food[],
+    Sunday: [] as Food[],
+  });
+  const addFoodToDay = (food: Food) => {
+    setMealPlan((prev) => ({
+      ...prev,
+      [selectedDay]: [...prev[selectedDay as keyof typeof mealPlan], food],
+    }));
+  };
+  const removeFoodFromDay = (food: Food) => {
+    setMealPlan((prev) => ({
+      ...prev,
+      [selectedDay]: [...prev[selectedDay as keyof typeof mealPlan]].filter(
+        (f) => f.name !== food.name
+      ),
+    }));
+  };
+
   return (
     <>
-      <RenderFoodList foods={foods} onClick={addFood} />
+      <RenderFoodList foods={foods} onClick={addFoodToDay} />
       <hr />
-      <h2>Monday</h2>
-      <RenderFoodList foods={selectedFood} onClick={removeFood} />
+      {days.map((day) => (
+        <>
+          <Styled.Day
+            onClick={() => setSelectedDay(day)}
+            selected={selectedDay === day}
+          >
+            {day}
+          </Styled.Day>
+          <RenderFoodList
+            foods={mealPlan[day as keyof typeof mealPlan]}
+            onClick={removeFoodFromDay}
+          />
+        </>
+      ))}
     </>
   );
 };

@@ -25,3 +25,8 @@ export const Food = styled.div`
     font-style: italic;
   }
 `;
+
+export const Day = styled.h2<{ selected: boolean }>`
+  cursor: pointer;
+  color: ${(props) => (props.selected ? 'blue' : 'black')};
+`;
