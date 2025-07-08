@@ -12,27 +12,96 @@ import chipotle from './assets/chipotle.png';
 import macAndCheese from './assets/mac-and-cheese.png';
 import chili from './assets/chili.png';
 import gnocchi from './assets/gnocchi.png';
-import salad from './assets/salad.png';
+import tofu from './assets/tofu.png';
+import eggplant from './assets/eggplant.png';
+import broccoli from './assets/broccoli.png';
+import bananas from './assets/bananas.png';
+import avocadoes from './assets/avocadoes.png';
+import spinach from './assets/spinach.png';
+import carrots from './assets/carrots.png';
+import tomatoes from './assets/tomatoes.png';
 
-export const foods: Food[] = [
-  { name: 'burger', nutrient: 'protein', image: burger },
-  { name: 'chili', nutrient: 'protein', image: chili },
-  { name: 'beans', nutrient: 'protein', image: beans },
-  { name: 'gnocchi', nutrient: 'carbs', image: gnocchi },
-  { name: 'spaghetti', nutrient: 'carbs', image: spaghetti },
-  { name: 'mac and cheese', nutrient: 'carbs', image: macAndCheese },
-  { name: 'pizza', nutrient: 'carbs', image: pizza },
-  { name: 'rice', nutrient: 'carbs', image: rice },
-  { name: 'salad', nutrient: 'veggies', image: salad },
-  { name: 'roasted veggies', nutrient: 'veggies' },
-  { name: 'roasted butternut squash salad', nutrient: 'veggies' },
-  { name: 'chocolate-chip cookies', category: 'sweets', image: cookies },
-  { name: 'chipotle', category: 'restaurants', image: chipotle },
+const greens: Food[] = [
+  { name: 'kale', nutrient: 'greens', seasons: ['winter'], image: kale },
+  { name: 'spinach', nutrient: 'greens', image: spinach },
+  {
+    name: 'broccoli',
+    nutrient: 'greens',
+    image: broccoli,
+    seasons: ['summer', 'fall'],
+  },
+  {
+    name: 'brussels sprouts',
+    nutrient: 'greens',
+    image: '',
+    seasons: ['fall'],
+  },
+];
+
+const veggies: Food[] = [
   {
     name: 'summer squash',
     nutrient: 'veggies',
     seasons: ['summer'],
     image: summerSquash,
   },
-  { name: 'kale', nutrient: 'veggies', seasons: ['winter'], image: kale },
+
+  {
+    name: 'eggplant',
+    nutrient: 'veggies',
+    image: eggplant,
+    seasons: ['summer'],
+  },
+  { name: 'corn', nutrient: 'veggies', image: '', seasons: ['summer'] },
+  {
+    name: 'carrots',
+    nutrient: 'veggies',
+    image: carrots,
+    seasons: ['summer', 'fall'],
+  },
+];
+
+const fruits: Food[] = [
+  {
+    name: 'apples',
+    nutrient: 'veggies',
+    image: '',
+    seasons: ['summer', 'fall'],
+  },
+  { name: 'bananas', nutrient: 'veggies', image: bananas },
+  { name: 'avocados', nutrient: 'veggies', image: avocadoes },
+  { name: 'tomatoes', nutrient: 'veggies', image: tomatoes, seasons: ['fall'] },
+];
+
+const proteins: Food[] = [
+  { name: 'tofu', nutrient: 'protein', image: tofu },
+  { name: 'burger', nutrient: 'protein', image: burger },
+  { name: 'chili', nutrient: 'protein', image: chili },
+  { name: 'beans', nutrient: 'protein', image: beans },
+];
+
+const carbs: Food[] = [
+  { name: 'gnocchi', nutrient: 'carbs', image: gnocchi },
+  { name: 'spaghetti', nutrient: 'carbs', image: spaghetti },
+  { name: 'mac and cheese', nutrient: 'carbs', image: macAndCheese },
+  { name: 'pizza', nutrient: 'carbs', image: pizza },
+  { name: 'rice', nutrient: 'carbs', image: rice },
+];
+
+const sweets: Food[] = [
+  { name: 'chocolate-chip cookies', category: 'sweets', image: cookies },
+];
+
+const restaurants: Food[] = [
+  { name: 'chipotle', category: 'restaurants', image: chipotle },
+];
+
+export const foods: Food[] = [
+  ...greens,
+  ...veggies,
+  ...fruits,
+  ...proteins,
+  ...carbs,
+  ...sweets,
+  ...restaurants,
 ];

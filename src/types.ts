@@ -1,5 +1,11 @@
 export type Season = 'spring' | 'summer' | 'fall' | 'winter' | 'all';
-export type Nutrient = 'protein' | 'carbs' | 'veggies' | 'sweets' | 'all';
+export type Nutrient =
+  | 'protein'
+  | 'carbs'
+  | 'veggies'
+  | 'greens'
+  | 'sweets'
+  | 'all';
 
 export const seasons: Season[] = ['all', 'spring', 'summer', 'fall', 'winter'];
 export const nutrients: Nutrient[] = [
@@ -7,6 +13,7 @@ export const nutrients: Nutrient[] = [
   'protein',
   'carbs',
   'veggies',
+  'greens',
   'sweets',
 ];
 
