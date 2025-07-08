@@ -17,19 +17,29 @@ const FoodIdeas = ({
 }: FoodIdeasProps) => (
   <div>
     <Styled.H1>Food Ideas</Styled.H1>
-    <div>
-      <h2>Seasons:</h2>
-      <Styled.SeasonsContainer>
+    <Styled.FiltersContainer>
+      <Styled.Filter>
+        <h2>Seasons:</h2>
         {['all', 'spring', 'summer', 'fall', 'winter'].map((season) => (
-          <Styled.SeasonLabel
+          <Styled.FilterLabel
             onClick={() => setSelectedSeason(season as Season)}
             selected={selectedSeason === season}
           >
             {season}
-          </Styled.SeasonLabel>
+          </Styled.FilterLabel>
         ))}
-      </Styled.SeasonsContainer>
-    </div>
+      </Styled.Filter>
+      <Styled.Filter>
+        <h2>Nutrients:</h2>
+        {['protein', 'carbs', 'veggies', 'sweets', 'restaurants'].map(
+          (category) => (
+            <Styled.FilterLabel key={category} selected={false}>
+              {category}
+            </Styled.FilterLabel>
+          )
+        )}
+      </Styled.Filter>
+    </Styled.FiltersContainer>
     <FoodList
       foods={foods.filter(
         (food) =>
