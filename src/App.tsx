@@ -7,6 +7,16 @@ import { foods } from './data';
 import FoodIdeas from './FoodIdeas/FoodIdeas';
 import MealPlan from './MealPlan/MealPlan';
 
+const getFilteredFoods = (foods: Food[], filter: Filter) =>
+  foods.filter((food) => {
+    const matchesSeason =
+      filter.season === 'all' ||
+      (food.seasons && food.seasons.includes(filter.season));
+    const matchesNutrient =
+      filter.nutrient === 'all' || food.nutrient === filter.nutrient;
+    return matchesSeason && matchesNutrient;
+  });
+
 const App = () => {
   const [selectedDay, setSelectedDay] = useState(days[0]);
   const [mealPlan, setMealPlan] = useState({
@@ -45,10 +55,7 @@ const App = () => {
       <FoodIdeas
         filter={filter}
         setFilter={setFilter}
-        foods={foods.filter(
-          (food) =>
-            filter.nutrient === 'all' || food.nutrient === filter.nutrient
-        )}
+        foods={getFilteredFoods(foods, filter)}
         addFoodToDay={addFoodToDay}
       />
       <MealPlan
