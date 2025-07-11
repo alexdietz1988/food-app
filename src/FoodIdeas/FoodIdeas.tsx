@@ -6,14 +6,12 @@ interface FoodIdeasProps {
   filter: Filter;
   setFilter: React.Dispatch<React.SetStateAction<Filter>>;
   foods: Food[];
-  addFoodToDay: (food: Food) => void;
 }
 
 const FoodIdeas = ({
   filter,
   setFilter,
   foods,
-  addFoodToDay,
 }: FoodIdeasProps) => (
   <div>
     <Styled.H1>Food Ideas</Styled.H1>
@@ -41,7 +39,7 @@ const FoodIdeas = ({
         ))}
       </Styled.Filter>
     </Styled.FiltersContainer>
-    <FoodList foods={foods} onClick={addFoodToDay} />
+    <FoodList foods={foods} />
   </div>
 );
 

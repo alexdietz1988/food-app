@@ -3,13 +3,12 @@ import { type Food } from '../types';
 
 interface FoodListProps {
   foods: Food[];
-  onClick: (food: Food) => void;
 }
 
-const FoodList = ({ foods, onClick }: FoodListProps) => (
+const FoodList = ({ foods }: FoodListProps) => (
   <Styled.FoodList>
     {foods.map((food) => (
-      <Styled.Food onClick={() => onClick(food)} key={food.name}>
+      <Styled.Food key={food.name}>
         {food.image && <img src={food.image} alt={food.name} />}
         <h1>{food.name}</h1>
         <h2>{food.nutrient ? ` ${food.nutrient}` : ''}</h2>
