@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import * as Styled from './App.styles';
 import { type Food, type Filter } from './types';
-import { foods } from './data';
+import { foods as foodsRaw } from './data';
 
 import FoodIdeas from './FoodIdeas/FoodIdeas';
+import Meals from './Meals/Meals';
 
 const getFilteredFoods = (foods: Food[], filter: Filter) =>
   foods.filter((food) => {
@@ -20,14 +21,12 @@ const App = () => {
     season: 'all',
     nutrient: 'all',
   });
+  const foods = getFilteredFoods(foodsRaw, filter);
 
   return (
     <Styled.Container>
-      <FoodIdeas
-        filter={filter}
-        setFilter={setFilter}
-        foods={getFilteredFoods(foods, filter)}
-      />
+      <FoodIdeas filter={filter} setFilter={setFilter} foods={foods} />
+      <Meals foods={foods} />
     </Styled.Container>
   );
 };
