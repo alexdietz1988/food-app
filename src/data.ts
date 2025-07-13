@@ -56,7 +56,10 @@ import raspberries from './assets/raspberries.png';
 import rhubarb from './assets/rhubarb.png';
 import rutabaga from './assets/rutabaga.png';
 import spinach from './assets/spinach.png';
+import strawberry from './assets/strawberry.png';
 import summerSquash from './assets/summer-squash.png';
+import sweetPotato from './assets/sweet-potato.png';
+import swissChard from './assets/swiss-chard.png';
 import tomatoes from './assets/tomatoes.png';
 
 export const foods: Food[] = [
@@ -227,15 +230,27 @@ export const foods: Food[] = [
   { name: 'rhubarb', image: rhubarb, seasons: ['spring'] },
   { name: 'rutabagas', image: rutabaga, seasons: ['fall', 'winter'] },
   { name: 'spinach', image: spinach, seasons: ['spring', 'fall'] },
-  { name: 'strawberries', image: '', seasons: ['spring', 'summer', 'fall'] },
+  {
+    name: 'strawberries',
+    image: strawberry,
+    seasons: ['spring', 'summer', 'fall'],
+  },
   {
     name: 'summer squash',
 
     image: summerSquash,
     seasons: ['summer'],
   },
-  { name: 'sweet potatoes & yams', image: '', seasons: ['fall', 'winter'] },
-  { name: 'swiss chard', image: '', seasons: ['spring', 'fall', 'winter'] },
+  {
+    name: 'sweet potatoes & yams',
+    image: sweetPotato,
+    seasons: ['fall', 'winter'],
+  },
+  {
+    name: 'swiss chard',
+    image: swissChard,
+    seasons: ['spring', 'fall', 'winter'],
+  },
   { name: 'tomatillos', image: '', seasons: ['summer'] },
   {
     name: 'tomatoes',

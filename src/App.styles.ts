@@ -80,6 +80,7 @@ export const Food = styled.div`
 export const FoodLabel = styled.p<{ alwaysShow: boolean }>`
   opacity: ${(props) => (props.alwaysShow ? 1 : 0)};
   position: absolute;
+  padding: 0.5rem;
   max-width: 100%;
   font-size: 0.85rem;
 `;
