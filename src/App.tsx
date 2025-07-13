@@ -2,7 +2,6 @@ import { useState } from 'react';
 import * as Styled from './App.styles';
 import { type Filter, seasons } from './types';
 import { foods as foodsRaw } from './data';
-import FoodList from './FoodList/FoodList';
 
 const App = () => {
   const [filter, setFilter] = useState<Filter>({
@@ -33,7 +32,15 @@ const App = () => {
             ))}
           </Styled.Filter>
         </Styled.FiltersContainer>
-        <FoodList foods={foods} />
+          <Styled.FoodList>
+            {foods.map((food) => (
+              <Styled.Food key={food.name}>
+                {food.image && <img src={food.image} alt={food.name} />}
+                <h1>{food.name}</h1>
+                <h2>{food.seasons ? `${food.seasons}` : ''}</h2>
+              </Styled.Food>
+            ))}
+          </Styled.FoodList>
       </div>
     </Styled.Container>
   );
