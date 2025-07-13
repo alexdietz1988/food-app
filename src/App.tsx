@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import * as Styled from './App.styles';
-import { type Filter, seasons } from './types';
+import { type Filter, type Season, seasons } from './types';
 import { foods as foodsRaw } from './data';
+
+const getCurrentSeason = (month: number): Season => {
+  if (month === 11 || month === 0 || month === 1) return 'winter';
+  if (month >= 2 && month <= 4) return 'spring';
+  if (month >= 5 && month <= 7) return 'summer';
+  return 'fall';
+};
 
 const App = () => {
   const [filter, setFilter] = useState<Filter>({
-    season: 'all',
+    season: getCurrentSeason(new Date().getMonth()),
   });
 
   const foods = foodsRaw.filter((food) => {
