@@ -58,10 +58,6 @@ export const Food = styled.div`
     font-weight: bold;
   }
 
-  h2 {
-    font-style: italic;
-  }
-
   img {
     width: 5rem;
   }
