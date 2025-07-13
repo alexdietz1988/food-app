@@ -1,107 +1,157 @@
 import { type Food } from './types';
 
-import kale from './assets/kale.png';
-import cookies from './assets/cookies.png';
-import summerSquash from './assets/summer-squash.png';
-import rice from './assets/rice.png';
-import beans from './assets/beans.png';
-import pizza from './assets/pizza.png';
-import spaghetti from './assets/spaghetti.png';
-import burger from './assets/burger.png';
-import chipotle from './assets/chipotle.png';
-import macAndCheese from './assets/mac-and-cheese.png';
-import chili from './assets/chili.png';
-import gnocchi from './assets/gnocchi.png';
-import tofu from './assets/tofu.png';
-import eggplant from './assets/eggplant.png';
-import broccoli from './assets/broccoli.png';
-import bananas from './assets/bananas.png';
-import avocadoes from './assets/avocadoes.png';
-import spinach from './assets/spinach.png';
+import avocado from './assets/avocado.png';
+import banana from './assets/banana.png';
+import beets from './assets/beets.png';
+import bellPeppers from './assets/bell-peppers.png';
+import blackberries from './assets/blackberries.png';
+import cantaloupe from './assets/cantaloupe.png';
 import carrots from './assets/carrots.png';
+import celery from './assets/celery.png';
+import cherries from './assets/cherries.png';
+import corn from './assets/corn.png';
+import cucumber from './assets/cucumber.png';
+import eggplant from './assets/eggplant.png';
+import garlic from './assets/garlic.png';
+import greenBeans from './assets/green-beans.png';
+// import kale from './assets/kale.png';
+import summerSquash from './assets/summer-squash.png';
 import tomatoes from './assets/tomatoes.png';
 
-const greens: Food[] = [
-  { name: 'kale', nutrient: 'greens', seasons: ['winter'], image: kale },
-  { name: 'spinach', nutrient: 'greens', image: spinach },
+export const foods: Food[] = [
   {
-    name: 'broccoli',
-    nutrient: 'greens',
-    image: broccoli,
-    seasons: ['summer', 'fall'],
-  },
-  {
-    name: 'brussels sprouts',
-    nutrient: 'greens',
-    image: '',
-    seasons: ['fall'],
-  },
-];
-
-const veggies: Food[] = [
-  {
-    name: 'summer squash',
-    nutrient: 'veggies',
+    name: 'avocado',
+    image: avocado,
     seasons: ['summer'],
-    image: summerSquash,
   },
+  {
+    name: 'bananas',
 
+    image: banana,
+    seasons: ['summer'],
+  },
+  {
+    name: 'beets',
+
+    image: beets,
+    seasons: ['summer'],
+  },
+  {
+    name: 'bell peppers',
+
+    image: bellPeppers,
+    seasons: ['summer'],
+  },
+  {
+    name: 'blackberries',
+
+    image: blackberries,
+    seasons: ['summer'],
+  },
+  {
+    name: 'blueberries',
+
+    image: '',
+    seasons: ['summer'],
+  },
+  {
+    name: 'cantaloupe',
+
+    image: cantaloupe,
+    seasons: ['summer'],
+  },
+  {
+    name: 'carrots',
+
+    image: carrots,
+    seasons: ['summer'],
+  },
+  {
+    name: 'celery',
+
+    image: celery,
+    seasons: ['summer'],
+  },
+  {
+    name: 'cherries',
+
+    image: cherries,
+    seasons: ['summer'],
+  },
+  {
+    name: 'corn',
+
+    image: corn,
+    seasons: ['summer'],
+  },
+  {
+    name: 'cucumbers',
+
+    image: cucumber,
+    seasons: ['summer'],
+  },
   {
     name: 'eggplant',
-    nutrient: 'veggies',
+
     image: eggplant,
     seasons: ['summer'],
   },
-  { name: 'corn', nutrient: 'veggies', image: '', seasons: ['summer'] },
   {
-    name: 'carrots',
-    nutrient: 'veggies',
-    image: carrots,
-    seasons: ['summer', 'fall'],
-  },
-];
+    name: 'garlic',
 
-const fruits: Food[] = [
+    image: garlic,
+    seasons: ['summer'],
+  },
   {
-    name: 'apples',
-    nutrient: 'fruits',
+    name: 'green beans',
+
+    image: greenBeans,
+    seasons: ['summer'],
+  },
+  {
+    name: 'herbs',
+
     image: '',
-    seasons: ['summer', 'fall'],
+    seasons: ['summer'],
   },
-  { name: 'bananas', nutrient: 'fruits', image: bananas },
-  { name: 'avocados', nutrient: 'fruits', image: avocadoes },
-  { name: 'tomatoes', nutrient: 'fruits', image: tomatoes, seasons: ['fall'] },
-];
+  {
+    name: 'honeydew melon',
 
-const proteins: Food[] = [
-  { name: 'tofu', nutrient: 'protein', image: tofu },
-  { name: 'burger', nutrient: 'protein', image: burger },
-  { name: 'chili', nutrient: 'protein', image: chili },
-  { name: 'beans', nutrient: 'protein', image: beans },
-];
+    image: '',
+    seasons: ['summer'],
+  },
+  {
+    name: 'lemons',
 
-const carbs: Food[] = [
-  { name: 'gnocchi', nutrient: 'carbs', image: gnocchi },
-  { name: 'spaghetti', nutrient: 'carbs', image: spaghetti },
-  { name: 'mac and cheese', nutrient: 'carbs', image: macAndCheese },
-  { name: 'pizza', nutrient: 'carbs', image: pizza },
-  { name: 'rice', nutrient: 'carbs', image: rice },
-];
+    image: '',
+    seasons: ['summer'],
+  },
+  { name: 'lima beans', image: '', seasons: ['summer'] },
+  { name: 'limes', image: '', seasons: ['summer'] },
+  { name: 'mangos', image: '', seasons: ['summer'] },
+  { name: 'okra', image: '', seasons: ['summer'] },
+  { name: 'onions', image: '', seasons: ['summer'] },
+  { name: 'peaches', image: '', seasons: ['summer'] },
+  { name: 'pears', image: '', seasons: ['summer'] },
+  { name: 'peas', image: '', seasons: ['summer'] },
+  { name: 'pineapples', image: '', seasons: ['summer'] },
+  { name: 'plantains', image: '', seasons: ['summer'] },
+  { name: 'plums', image: '', seasons: ['summer'] },
+  { name: 'raspberries', image: '', seasons: ['summer'] },
+  { name: 'strawberries', image: '', seasons: ['summer'] },
+  {
+    name: 'summer squash',
 
-const sweets: Food[] = [
-  { name: 'chocolate-chip cookies', nutrient: 'sweets', image: cookies },
-];
+    image: summerSquash,
+    seasons: ['summer'],
+  },
+  { name: 'tomatillos', image: '', seasons: ['summer'] },
+  {
+    name: 'tomatoes',
 
-const restaurants: Food[] = [
-  { name: 'chipotle', category: 'restaurants', image: chipotle },
-];
-
-export const foods: Food[] = [
-  ...greens,
-  ...veggies,
-  ...fruits,
-  ...proteins,
-  ...carbs,
-  ...sweets,
-  ...restaurants,
+    image: tomatoes,
+    seasons: ['summer'],
+  },
+  { name: 'watermelon', image: '', seasons: ['summer'] },
+  { name: 'zucchini', image: '', seasons: ['summer'] },
 ];
