@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  & > div {
-    margin-block-end: 4rem;
-  }
-`;
+export const Container = styled.div``;
 
 export const H1 = styled.h1`
   font-size: 1.5rem;
@@ -39,7 +35,7 @@ export const Food = styled.div`
   border: 1px solid black;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  width: 5rem;
+  width: 7.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -49,16 +45,17 @@ export const Food = styled.div`
   background-color: white;
   color: black;
 
-  &:hover {
-    cursor: pointer;
-    background-color: hsl(0 0 90%);
-  }
-
-  h1 {
-    font-weight: bold;
-  }
-
   img {
-    width: 5rem;
+    height: 5rem;
   }
+
+  p {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const Footer = styled.footer`
+  margin-block-start: 5rem;
 `;

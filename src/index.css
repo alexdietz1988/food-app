@@ -9,8 +9,6 @@
 
 body {
   padding: 2rem;
-  max-width: 600px;
-  margin-inline: auto;
   background-color: var(--color-bg);
   color: white;
 }
@@ -19,4 +17,11 @@ h1,
 h2 {
   font-weight: 300;
   font-size: medium;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: lightblue;
+  }
 }
