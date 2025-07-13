@@ -20,7 +20,6 @@ const App = () => {
       <Styled.H1>Seasonal Produce</Styled.H1>
       <Styled.FiltersContainer>
         <Styled.Filter>
-          <h2>Seasons:</h2>
           {seasons.map((season) => (
             <Styled.FilterLabel
               onClick={() => setFilter((prev) => ({ ...prev, season }))}

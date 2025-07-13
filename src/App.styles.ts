@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  text-align: center;
+`;
 
 export const H1 = styled.h1`
   font-size: 1.5rem;
@@ -18,6 +20,11 @@ export const FiltersContainer = styled.div`
 export const Filter = styled.div`
   display: flex;
   gap: 1rem;
+  justify-content: center;
+
+  @media (width < 600px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const FilterLabel = styled.div<{ selected: boolean }>`
@@ -28,7 +35,12 @@ export const FilterLabel = styled.div<{ selected: boolean }>`
 export const FoodList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+
+  @media (width < 600px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const Food = styled.div`
@@ -38,6 +50,7 @@ export const Food = styled.div`
   padding-inline: 0.5rem;
   width: 6rem;
   height: 6rem;
+  max-width: 25%;
   text-align: center;
   display: flex;
   flex-direction: column;

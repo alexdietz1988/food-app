@@ -11,6 +11,10 @@ body {
   padding: 2rem;
   background-color: var(--color-bg);
   color: white;
+
+  @media (width < 600px) {
+    padding: 1rem;
+  }
 }
 
 h1,
