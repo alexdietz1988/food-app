@@ -43,26 +43,26 @@ import summerSquash from './assets/summer-squash.png';
 import tomatoes from './assets/tomatoes.png';
 
 export const foods: Food[] = [
-  { name: 'apples', image: apple, seasons: ['spring', 'fall'] },
+  { name: 'apples', image: apple, seasons: ['spring', 'fall', 'winter'] },
   { name: 'apricots', image: apricot, seasons: ['spring'] },
   { name: 'asparagus', image: asparagus, seasons: ['spring'] },
 
   {
     name: 'avocado',
     image: avocado,
-    seasons: ['spring', 'summer'],
+    seasons: ['spring', 'summer', 'winter'],
   },
   {
     name: 'bananas',
 
     image: banana,
-    seasons: ['spring', 'summer', 'fall'],
+    seasons: ['spring', 'summer', 'fall', 'winter'],
   },
   {
     name: 'beets',
 
     image: beets,
-    seasons: ['summer', 'fall'],
+    seasons: ['summer', 'fall', 'winter'],
   },
   {
     name: 'bell peppers',
@@ -83,8 +83,12 @@ export const foods: Food[] = [
     seasons: ['summer'],
   },
   { name: 'broccoli', image: broccoli, seasons: ['spring', 'fall'] },
-  { name: 'brussels sprouts', image: brusselsSprouts, seasons: ['fall'] },
-  { name: 'cabbage', image: cabbage, seasons: ['spring', 'fall'] },
+  {
+    name: 'brussels sprouts',
+    image: brusselsSprouts,
+    seasons: ['fall', 'winter'],
+  },
+  { name: 'cabbage', image: cabbage, seasons: ['spring', 'fall', 'winter'] },
 
   {
     name: 'cantaloupe',
@@ -96,7 +100,7 @@ export const foods: Food[] = [
     name: 'carrots',
 
     image: carrots,
-    seasons: ['spring', 'summer', 'fall'],
+    seasons: ['spring', 'summer', 'fall', 'winter'],
   },
   { name: 'cauliflower', image: cauliflower, seasons: ['fall'] },
   { name: 'cranberries', image: cranberries, seasons: ['fall'] },
@@ -104,7 +108,7 @@ export const foods: Food[] = [
     name: 'celery',
 
     image: celery,
-    seasons: ['spring', 'summer', 'fall'],
+    seasons: ['spring', 'summer', 'fall', 'winter'],
   },
   {
     name: 'cherries',
@@ -118,7 +122,11 @@ export const foods: Food[] = [
     image: corn,
     seasons: ['summer'],
   },
-  { name: 'collard greens', image: collardGreens, seasons: ['spring', 'fall'] },
+  {
+    name: 'collard greens',
+    image: collardGreens,
+    seasons: ['spring', 'fall', 'winter'],
+  },
   {
     name: 'cucumbers',
 
@@ -138,6 +146,7 @@ export const foods: Food[] = [
     seasons: ['spring', 'summer', 'fall'],
   },
   { name: 'ginger', image: ginger, seasons: ['fall'] },
+  { name: 'grapefruit', image: '', seasons: ['winter'] },
   { name: 'grapes', image: grapes, seasons: ['fall'] },
   {
     name: 'green beans',
@@ -149,7 +158,7 @@ export const foods: Food[] = [
     name: 'herbs',
 
     image: herbs,
-    seasons: ['spring', 'summer', 'fall'],
+    seasons: ['spring', 'summer', 'fall', 'winter'],
   },
   {
     name: 'honeydew melon',
@@ -157,35 +166,50 @@ export const foods: Food[] = [
     image: honeydewMelon,
     seasons: ['summer'],
   },
-  { name: 'kale', image: kale, seasons: ['spring', 'fall'] },
-  { name: 'kiwifruit', image: kiwi, seasons: ['spring', 'fall'] },
+  { name: 'kale', image: kale, seasons: ['spring', 'fall', 'winter'] },
+  { name: 'kiwifruit', image: kiwi, seasons: ['spring', 'fall', 'winter'] },
+  { name: 'leeks', image: '', seasons: ['winter'] },
   {
     name: 'lemons',
 
     image: lemon,
-    seasons: ['spring', 'summer', 'fall'],
+    seasons: ['spring', 'summer', 'fall', 'winter'],
   },
   { name: 'lettuce', image: lettuce, seasons: ['spring', 'fall'] },
   { name: 'lima beans', image: limaBeans, seasons: ['summer'] },
-  { name: 'limes', image: lime, seasons: ['spring', 'summer', 'fall'] },
+  {
+    name: 'limes',
+    image: lime,
+    seasons: ['spring', 'summer', 'fall', 'winter'],
+  },
   { name: 'mangos', image: mango, seasons: ['summer', 'fall'] },
   { name: 'mushrooms', image: mushrooms, seasons: ['spring', 'fall'] },
   { name: 'okra', image: okra, seasons: ['summer', 'fall'] },
-  { name: 'onions', image: onion, seasons: ['spring', 'summer', 'fall'] },
+  {
+    name: 'onions',
+    image: onion,
+    seasons: ['spring', 'summer', 'fall', 'winter'],
+  },
+  { name: 'oranges', image: '', seasons: ['winter'] },
+  { name: 'parsnips', image: '', seasons: ['winter'] },
   { name: 'peaches', image: peach, seasons: ['summer'] },
   { name: 'peas', image: '', seasons: ['spring', 'summer', 'fall'] },
-  { name: 'pears', image: '', seasons: ['summer', 'fall'] },
+  { name: 'pears', image: '', seasons: ['summer', 'fall', 'winter'] },
   { name: 'pineapples', image: '', seasons: ['spring', 'summer'] },
-  { name: 'plantains', image: '', seasons: ['spring', 'summer', 'fall'] },
+  {
+    name: 'plantains',
+    image: '',
+    seasons: ['spring', 'summer', 'fall', 'winter'],
+  },
   { name: 'plums', image: '', seasons: ['summer'] },
   { name: 'parsnips', image: '', seasons: ['fall'] },
-  { name: 'pomegranates', image: '', seasons: ['fall'] },
-  { name: 'potatoes', image: '', seasons: ['fall'] },
-  { name: 'pumpkin', image: '', seasons: ['fall'] },
+  { name: 'pomegranates', image: '', seasons: ['fall', 'winter'] },
+  { name: 'potatoes', image: '', seasons: ['fall', 'winter'] },
+  { name: 'pumpkin', image: '', seasons: ['fall', 'winter'] },
   { name: 'radishes', image: '', seasons: ['spring', 'fall'] },
   { name: 'raspberries', image: '', seasons: ['summer', 'fall'] },
   { name: 'rhubarb', image: '', seasons: ['spring'] },
-  { name: 'rutabagas', image: '', seasons: ['fall'] },
+  { name: 'rutabagas', image: '', seasons: ['fall', 'winter'] },
   { name: 'spinach', image: '', seasons: ['spring', 'fall'] },
   { name: 'strawberries', image: '', seasons: ['spring', 'summer', 'fall'] },
   {
@@ -194,8 +218,8 @@ export const foods: Food[] = [
     image: summerSquash,
     seasons: ['summer'],
   },
-  { name: 'sweet potatoes & yams', image: '', seasons: ['fall'] },
-  { name: 'swiss chard', image: '', seasons: ['spring', 'fall'] },
+  { name: 'sweet potatoes & yams', image: '', seasons: ['fall', 'winter'] },
+  { name: 'swiss chard', image: '', seasons: ['spring', 'fall', 'winter'] },
   { name: 'tomatillos', image: '', seasons: ['summer'] },
   {
     name: 'tomatoes',
@@ -203,8 +227,8 @@ export const foods: Food[] = [
     image: tomatoes,
     seasons: ['summer'],
   },
-  { name: 'turnips', image: '', seasons: ['spring', 'fall'] },
+  { name: 'turnips', image: '', seasons: ['spring', 'fall', 'winter'] },
   { name: 'watermelon', image: '', seasons: ['summer'] },
-  { name: 'winter squash', image: '', seasons: ['fall'] },
+  { name: 'winter squash', image: '', seasons: ['fall', 'winter'] },
   { name: 'zucchini', image: '', seasons: ['summer'] },
 ];
