@@ -38,7 +38,14 @@ import mango from './assets/mango.png';
 import mushrooms from './assets/mushrooms.png';
 import okra from './assets/okra.png';
 import onion from './assets/onion.png';
+import parsnip from './assets/parsnip.png';
 import peach from './assets/peach.png';
+import pear from './assets/pear.png';
+import peas from './assets/peas.png';
+import pineapple from './assets/pineapple.png';
+import plantain from './assets/plantain.png';
+import plum from './assets/plum.png';
+import pomegranate from './assets/pomegranate.png';
 import summerSquash from './assets/summer-squash.png';
 import tomatoes from './assets/tomatoes.png';
 
@@ -191,19 +198,19 @@ export const foods: Food[] = [
     seasons: ['spring', 'summer', 'fall', 'winter'],
   },
   { name: 'oranges', image: '', seasons: ['winter'] },
-  { name: 'parsnips', image: '', seasons: ['winter'] },
+  { name: 'parsnips', image: parsnip, seasons: ['winter'] },
   { name: 'peaches', image: peach, seasons: ['summer'] },
-  { name: 'peas', image: '', seasons: ['spring', 'summer', 'fall'] },
-  { name: 'pears', image: '', seasons: ['summer', 'fall', 'winter'] },
-  { name: 'pineapples', image: '', seasons: ['spring', 'summer'] },
+  { name: 'pears', image: pear, seasons: ['summer', 'fall', 'winter'] },
+  { name: 'peas', image: peas, seasons: ['spring', 'summer', 'fall'] },
+  { name: 'pineapples', image: pineapple, seasons: ['spring', 'summer'] },
   {
     name: 'plantains',
-    image: '',
+    image: plantain,
     seasons: ['spring', 'summer', 'fall', 'winter'],
   },
-  { name: 'plums', image: '', seasons: ['summer'] },
-  { name: 'parsnips', image: '', seasons: ['fall'] },
-  { name: 'pomegranates', image: '', seasons: ['fall', 'winter'] },
+  { name: 'plums', image: plum, seasons: ['summer'] },
+  { name: 'parsnips', image: parsnip, seasons: ['fall'] },
+  { name: 'pomegranates', image: pomegranate, seasons: ['fall', 'winter'] },
   { name: 'potatoes', image: '', seasons: ['fall', 'winter'] },
   { name: 'pumpkin', image: '', seasons: ['fall', 'winter'] },
   { name: 'radishes', image: '', seasons: ['spring', 'fall'] },
