@@ -33,9 +33,11 @@ const App = () => {
       </Styled.FiltersContainer>
       <Styled.FoodList>
         {foods.map((food) => (
-          <Styled.Food key={food.name}>
+          <Styled.Food key={food.name} title={food.name}>
             {food.image && <img src={food.image} alt={food.name} />}
-            <p>{food.name}</p>
+            <Styled.FoodLabel alwaysShow={!food.image}>
+              {food.name}
+            </Styled.FoodLabel>
           </Styled.Food>
         ))}
       </Styled.FoodList>

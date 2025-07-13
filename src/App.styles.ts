@@ -32,10 +32,12 @@ export const FoodList = styled.div`
 `;
 
 export const Food = styled.div`
+  position: relative;
   border: 1px solid black;
   border-radius: 0.5rem;
-  padding: 0.5rem;
-  width: 7.5rem;
+  padding-inline: 0.5rem;
+  width: 6rem;
+  height: 6rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -49,11 +51,24 @@ export const Food = styled.div`
     height: 5rem;
   }
 
-  p {
-    height: 2rem;
-    display: flex;
-    align-items: center;
+  &:hover {
+    img {
+      opacity: 0.5;
+    }
+    p {
+      opacity: 1;
+      &:hover {
+        cursor: default;
+      }
+    }
   }
+`;
+
+export const FoodLabel = styled.p<{ alwaysShow: boolean }>`
+  opacity: ${(props) => (props.alwaysShow ? 1 : 0)};
+  position: absolute;
+  max-width: 100%;
+  font-size: 0.85rem;
 `;
 
 export const Footer = styled.footer`
