@@ -11,6 +11,7 @@ import blackberries from './assets/blackberries.png';
 import blueberries from './assets/blueberries.png';
 import broccoli from './assets/broccoli.png';
 import brusselsSprouts from './assets/brussels-sprouts.png';
+import butternutSquash from './assets/butternut-squash.png';
 import cabbage from './assets/cabbage.png';
 import cantaloupe from './assets/cantaloupe.png';
 import carrots from './assets/carrots.png';
@@ -60,7 +61,11 @@ import strawberry from './assets/strawberry.png';
 import summerSquash from './assets/summer-squash.png';
 import sweetPotato from './assets/sweet-potato.png';
 import swissChard from './assets/swiss-chard.png';
-import tomatoes from './assets/tomatoes.png';
+import tomatillo from './assets/tomatillo.png';
+import tomato from './assets/tomato.png';
+import turnip from './assets/turnip.png';
+import watermelon from './assets/watermelon.png';
+import zucchini from './assets/zucchini.png';
 
 export const foods: Food[] = [
   { name: 'apples', image: apple, seasons: ['spring', 'fall', 'winter'] },
@@ -251,15 +256,15 @@ export const foods: Food[] = [
     image: swissChard,
     seasons: ['spring', 'fall', 'winter'],
   },
-  { name: 'tomatillos', image: '', seasons: ['summer'] },
+  { name: 'tomatillos', image: tomatillo, seasons: ['summer'] },
   {
     name: 'tomatoes',
 
-    image: tomatoes,
+    image: tomato,
     seasons: ['summer'],
   },
-  { name: 'turnips', image: '', seasons: ['spring', 'fall', 'winter'] },
-  { name: 'watermelon', image: '', seasons: ['summer'] },
-  { name: 'winter squash', image: '', seasons: ['fall', 'winter'] },
-  { name: 'zucchini', image: '', seasons: ['summer'] },
+  { name: 'turnips', image: turnip, seasons: ['spring', 'fall', 'winter'] },
+  { name: 'watermelon', image: watermelon, seasons: ['summer'] },
+  { name: 'winter squash', image: butternutSquash, seasons: ['fall', 'winter'] },
+  { name: 'zucchini', image: zucchini, seasons: ['summer'] },
 ];
